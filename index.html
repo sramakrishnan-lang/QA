@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Agent Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>QA Agent Calculator</h1>
+      <p class="subtitle">Calculate performance metrics for your QA agents</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Agent Input Section -->
+    <section class="card" id="agent-input-section">
+      <h2>Agent Data Input</h2>
+      <div id="agents-container">
+        <!-- Agent rows injected by JS -->
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-secondary" id="add-agent-btn">+ Add Agent</button>
+        <button class="btn btn-primary" id="calculate-btn">Calculate Metrics</button>
+        <button class="btn btn-ghost" id="reset-btn">Reset</button>
+      </div>
+    </section>
+
+    <!-- Summary Cards -->
+    <section id="summary-section" class="hidden">
+      <h2 class="section-title">Summary</h2>
+      <div class="summary-grid" id="summary-grid">
+        <!-- summary cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- Results Table -->
+    <section class="card hidden" id="results-section">
+      <h2>Per-Agent Metrics</h2>
+      <div class="table-wrapper">
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>Agent</th>
+              <th>Tests Run</th>
+              <th>Passed</th>
+              <th>Failed</th>
+              <th>Bugs Found</th>
+              <th>Hours Spent</th>
+              <th>Pass Rate</th>
+              <th>Fail Rate</th>
+              <th>Bug Detection Rate</th>
+              <th>Tests / Hour</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody">
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="card hidden" id="charts-section">
+      <h2>Visual Comparison</h2>
+      <div class="charts-grid">
+        <div class="chart-box">
+          <h3>Pass Rate by Agent</h3>
+          <canvas id="passRateChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <h3>Tests per Hour by Agent</h3>
+          <canvas id="productivityChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <h3>Bug Detection Rate by Agent</h3>
+          <canvas id="bugRateChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <h3>Tests Run Distribution</h3>
+          <canvas id="testsDistChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>QA Agent Calculator &mdash; 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
